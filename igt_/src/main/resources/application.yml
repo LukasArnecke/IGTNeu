@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/igt
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/MongoTest
+    cassandra:
+      keyspace-name: igt_keyspace
+      contact-points: localhost
+      port: 9042
+      schema-action: create_if_not_exists
+    neo4j:
+      uri: neo4j://localhost:7474/NeoTest
+
+  jpa:
+    properties:
+      hibernate.show_sql: true
+      hibernate.use_sql_comments: true
+      hibernate.format_sql: true
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+
+logging:
+  level:
+    org: INFO
+
+

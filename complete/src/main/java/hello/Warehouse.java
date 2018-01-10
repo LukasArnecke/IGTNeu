@@ -24,6 +24,10 @@ public class Warehouse {
 
     public void addProduct(Product product){this.products.add(product); }
 
+    public String getwId(){
+        return this.wId;
+    }
+
     public String toString(Warehouse warehouse){
         String back;
         back = "wId: " + wId + " District: " + wDistrict + " Produkte: ";

@@ -80,20 +80,29 @@ public class Application {
             restTemplate.put(urlCustomer+"/id?"+hugobackback.getcId(), hugobackback);
             Customer hugobackbackback = restTemplate.getForObject(urlCustomer+"/id?", Customer.class);
             log.info(hugobackbackback.toString());
-            //Delete Customer, sollte erst am Ende kommen
-            restTemplate.delete(urlCustomer);
+
 
 
             //Warehouse
+			//Create Customer
+			Warehouse lager = restTemplate.postForObject(urlWarehouse, drogenversteck, Warehouse.class);
+			log.info(lager.toString());
+			//Read Customer
+			Warehouse lagerback = restTemplate.getForObject(urlWarehouse+"/id?"+lager.getwId(), Warehouse.class);
+			log.info(lagerback.toString());
+			//Update Customer
+			lagerback.addProduct(strick);
+			restTemplate.put(urlWarehouse+"/id?"+lagerback.getwId(), lagerback);
+			Warehouse lagerbackback = restTemplate.getForObject(urlWarehouse+"/id?", Warehouse.class);
+			log.info(lagerbackback.toString());
 
 
 			//delete
 
 			restTemplate.delete(urlCustomer+"/id?"+hugobackback.getcId());
 			restTemplate.delete(urlProduct+"/id?"+rebackback.getpId());
+			restTemplate.delete(urlWarehouse+"/id?"+lagerbackback.getwId());
 
-
-			//TODO: Selbe mit den anderen Klassen
 		};
 
 

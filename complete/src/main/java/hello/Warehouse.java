@@ -14,14 +14,15 @@ public class Warehouse {
         products = this.products;
     }
 
-    public Warehouse (String wDistrict, List<Product> products){
+    public Warehouse (String wDistrict){
         wDistrict = this.wDistrict;
-        products = this.products;
     }
 
     public void setDistrict(String district) {
         this.wDistrict = district;
     }
+
+    public void addProduct(Product product){this.products.add(product); }
 
     public String toString(Warehouse warehouse){
         String back;

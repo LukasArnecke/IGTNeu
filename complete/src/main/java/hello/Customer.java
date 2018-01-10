@@ -11,11 +11,12 @@ public class Customer {
     private Date date;
     private List<Product> products;
 
-    public Customer (String cId, String name, String district, Date date){
+    public Customer (String cId, String name, String district, Date date, List<Product> products){
         cId = this.cId;
         name = this.name;
         district = this.district;
         date = this.date;
+        products = this.products;
     }
 
     public Customer (String name, String district, Date date){
@@ -27,6 +28,12 @@ public class Customer {
     public void setDistrict(String district) {
         this.district = district;
     }
+
+    public String getcId(){
+        return this.cId;
+    }
+
+    public void addProduct(Product product){this.products.add(product); }
 
     public String toString(Customer customer){
         String back;

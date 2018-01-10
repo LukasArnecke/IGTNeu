@@ -22,6 +22,14 @@ public class Product {
         this.district = district;
     }*/
 
+    public String getpId(){
+        return this.pId;
+    }
+
+    public void setPreis(double preis){
+        this.preis = preis;
+    }
+
     public String toString(Product product){
         String back;
         back = "pId: " + pId + " Name: " + name + " Preis: " + preis;
